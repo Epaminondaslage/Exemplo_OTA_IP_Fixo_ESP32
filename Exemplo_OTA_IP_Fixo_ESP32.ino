@@ -1,3 +1,12 @@
+/*
+- Exemplo de como usar OTA (Over-the-Air) no ESP32, permitindo o upload de novos firmwares para o
+  ESP32 sem precisar de conexão física via USB, utilizando a rede WiFi e com IP Fixo.
+- Mensagens de status são enviadas para porta Serial.
+  Epaminondas Lage 
+  Setembro 2024
+*/
+
+
 #include <WiFi.h>
 #include <ArduinoOTA.h>  // Biblioteca para atualização Over-the-Air (OTA)
 
