@@ -3,7 +3,7 @@
   ESP32 sem precisar de conexão física via USB, utilizando a rede WiFi e com IP Fixo.
 - Mensagens de status são enviadas para porta Serial.
   Epaminondas Lage 
-  Setembro 2024
+  Setembro 2024  
 */
 
 
