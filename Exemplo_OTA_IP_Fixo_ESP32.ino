@@ -3,7 +3,7 @@
   ESP32 sem precisar de conexão física via USB, utilizando a rede WiFi e com IP Fixo.
 - Mensagens de status são enviadas para porta Serial.
   Epaminondas Lage 
-  Setembro 2024
+  Setembro 2024  
 */
 
 
@@ -11,18 +11,19 @@
 #include <ArduinoOTA.h>  // Biblioteca para atualização Over-the-Air (OTA)
 
 // Definições da rede WiFi
-const char* ssid = "SEU_SSID";        // Substitua pelo nome da sua rede WiFi
-const char* password = "SUA_SENHA";   // Substitua pela senha da sua rede WiFi
+const char* ssid = "PLT-DIR";         // colocar o SSID da rede wifi
+const char* password = "epaminondas"; //colocar a senha do wifi
+
 
 // Definições de IP fixo
-IPAddress local_IP(192, 168, 1, 100);     // Substitua pelo IP desejado
-IPAddress gateway(192, 168, 1, 1);        // Substitua pelo gateway da sua rede
+IPAddress local_IP(10, 0, 2, 150);     // Substitua pelo IP desejado
+IPAddress gateway(10, 0, 2, 1);        // Substitua pelo gateway da sua rede
 IPAddress subnet(255, 255, 255, 0);       // Máscara de sub-rede
 IPAddress primaryDNS(8, 8, 8, 8);         // DNS primário (opcional)
 IPAddress secondaryDNS(8, 8, 4, 4);       // DNS secundário (opcional)
 
-// Defina o pino do LED embutido (geralmente é o pino 2 no ESP32)
-#define LED_PIN 2
+// Defina o pino do LED embutido (geralmente é o pino 1 no ESP32)
+#define LED_PIN 1
 
 void setup() {
   // Inicializa a comunicação serial
@@ -99,9 +100,9 @@ void loop() {
 
   // Pisca o LED embutido
   digitalWrite(LED_PIN, HIGH);  // Liga o LED
-  delay(500);                   // Espera 500ms
+  delay(1000);                   // Espera 500ms
   digitalWrite(LED_PIN, LOW);   // Desliga o LED
-  delay(500);                   // Espera 500ms
+  delay(1000);                   // Espera 500ms
 
   // Exibe a mensagem no monitor serial
   Serial.println("Loop principal executando normalmente...");
